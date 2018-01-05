@@ -25,6 +25,10 @@
     .w3-bar .w3-button {
         padding: 16px;
     }
+
+    .minibar .w3-button {
+        padding: 5px;
+    }
 </style>
 </head>
 
@@ -44,7 +48,7 @@
                 <!-- Right-sided navbar links -->
                 <div class="w3-right w3-hide-small">
                     <a href="#about" class="w3-bar-item w3-button">About Me</a>
-                    <a href="#team" class="w3-bar-item w3-button"> My Work</a>
+                    <a href="#team" class="w3-bar-item w3-button" onclick="w3_open()" > My Work</a>
                     <a href="#pricing" class="w3-bar-item w3-button"> References</a>
                     <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Me</a>
                 </div>
@@ -54,6 +58,17 @@
       <i class="fa fa-bars"></i>
     </a>
             </div>
+            <!--For the Work Sub Menu -->
+            <div class="minibar w3-bar w3-white w3-card" style="display: none" id="myNavbar2">
+                <div class="w3-right w3-hide-small">
+                    <a href="#images" class="w3-bar-item w3-button">Images</a>
+                    <a href="#videos" class="w3-bar-item w3-button"> Videos</a>
+                    <a href="#vrayworks" class="w3-bar-item w3-button">V-ray Works</a>
+                    <a href="#lumion" class="w3-bar-item w3-button">Lumion</a>
+                </div>
+                
+            </div>
+
         
 
 
@@ -94,7 +109,7 @@
         <!-- Contact me Area -->
 
 
-        <div class="w3-center container" style="padding:60px 16px" id="contact">
+        <div class="w3-container" style="padding:60px 16px" id="contact">
 
             <h3 class="w3-center">CONTACT</h3>
             <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
@@ -114,7 +129,7 @@
                                 <p><input class="w3-input w3-border col-sm-10" type="text" placeholder="Subject..." required
                                         name="Subject"></p>
                                 <!--<p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>-->
-                                <textarea class="w3-input w3-border col-sm-10" id="comment" rows="4" form="contactForm" wrap="soft" placeholder="Message..."></textarea>
+                                <p><textarea class="w3-input w3-border col-sm-10" id="comment" rows="4" form="contactForm" wrap="soft" placeholder="Message..."></textarea></p>
                                 <button class="w3-button w3-black" type="submit">
             <i class="fa fa-paper-plane"></i> SEND MESSAGE
           </button>
@@ -131,14 +146,25 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script>
+
+
         // Toggle between showing and hiding the sidebar when clicking the menu icon
         var mySidebar = document.getElementById("mySidebar");
+        var myNavbar2 = document.getElementById("myNavbar2");
 
+       
         function w3_open() {
             if (mySidebar.style.display === 'block') {
                 mySidebar.style.display = 'none';
             } else {
                 mySidebar.style.display = 'block';
+            }
+
+            if(myNavbar2.style.display === 'block'){
+                myNavbar2.style.display = 'none';
+            }
+            else {
+                myNavbar2.style.display = 'block';
             }
         }
 
